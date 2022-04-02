@@ -15,10 +15,12 @@ from .forms import RoomForm
 
 def loginPage(request):
 
+    # On récupère les valeurs du formulaire si ce dernier a bien une méthode POST
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        # On vérifie que l'utilisateur existe bien dans la base de donnée
         try:
             user = User.objects.get(username=username)
         except:

@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+# Liste des urls pour l'application base
+
 urlpatterns = [
 
     path('login/', views.loginPage, name="login"),
